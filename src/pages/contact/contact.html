@@ -1,17 +1,23 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>
-      Contact
-    </ion-title>
+  <ion-navbar color="primary">
+    <ion-title class="centered">Contact</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content>
-  <ion-list>
-    <ion-list-header>Follow us on Twitter</ion-list-header>
+  <h2 class="centered">Send us a Message</h2>
+
+  <form>
     <ion-item>
-      <ion-icon name="ionic" item-start></ion-icon>
-      @ionicframework
+      <ion-label color="primary" stacked>Subject</ion-label>
+      <ion-input [(ngModel)]="subject" name="subject" placeholder="Subject"></ion-input>
     </ion-item>
-  </ion-list>
+
+    <ion-item>
+      <ion-label color="primary" stacked>Message</ion-label>
+      <ion-textarea [(ngModel)]="message" name="message" placeholder="Message"></ion-textarea>
+    </ion-item>
+
+    <button ion-button (click)="openEmailComposer()">Send Message</button>
+  </form>
 </ion-content>

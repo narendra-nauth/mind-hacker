@@ -15,6 +15,9 @@ import { MyStoryPage } from '../pages/my-story/my-story';
 import { VideosPage } from '../pages/videos/videos';
 import { MyStoryAddPage } from '../pages/my-story-add/my-story-add';
 import { MyStoryDetailPage } from '../pages/my-story-detail/my-story-detail';
+import { StoryProvider } from '../providers/story/story';
+
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -30,7 +33,8 @@ import { MyStoryDetailPage } from '../pages/my-story-detail/my-story-detail';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    HttpClientModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -47,7 +51,8 @@ import { MyStoryDetailPage } from '../pages/my-story-detail/my-story-detail';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    StoryProvider
   ]
 })
 export class AppModule {}
